@@ -1,0 +1,43 @@
+import telebot;
+bot = telebot.TeleBot(6566448300:AAGRePECTdZeFPycdTo_jQLCGmIfSq9XSMQ);
+@bot.message_handler(content_types=['text'])
+def get_text_messages(message):
+if message.text == "Салам":
+    bot.send_message(message.from_user.id, "Салам, чем обязан?")
+elif message.text == "/help":
+    bot.send_message(message.from_user.id, "Напиши Салам")
+else:
+    bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
+	
+	python
+import os
+from telegram.ext import Updater
+from github import Github
+
+def check_repository_changes(context):
+    # Подключаемся к GitHub с использованием токена доступа
+    g = Github(os.getenv(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))
+    
+    # Получаем репозиторий
+    repo = g.get_repo(Bober1)
+    
+    # Проверяем, были ли изменения в репозитории
+    if repo.get_stargazers().totalCount > context.chat_data.get('stars', 0):
+        context.chat_data['stars'] = repo.get_stargazers().totalCount
+        context.bot.send_message(chat_id=context.job.context, text='Кто-то поставил плюсик в репозитории!')
+    
+def main():
+    # Создаем экземпляр Updater и передаем токен вашего бота
+    updater = Updater(token=os.getenv('TELEGRAM_BOT_TOKEN'), use_context=True)
+    dispatcher = updater.dispatcher
+    
+    # Ставим плюсик в репозитории каждые 5 минут
+    job_queue = updater.job_queue
+    job_queue.run_repeating(check_repository_changes, interval=300, first=0, context=updater.job_queue)
+
+    # Запускаем бота
+    updater.start_polling()
+    updater.idle()
+
+if name == 'main':
+    main()
