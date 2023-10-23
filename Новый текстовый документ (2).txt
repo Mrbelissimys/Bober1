@@ -1,0 +1,4 @@
+# ѕровер€ем, были ли изменени€ в репозитории
+    if repo.get_stargazers().totalCount > context.chat_data.get('stars', 0):
+        context.chat_data['stars'] = repo.get_stargazers().totalCount
+        context.bot.send_message(chat_id=context.job.context, text=' то-то поставил плюсик в репозитории!')
