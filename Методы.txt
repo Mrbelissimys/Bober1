@@ -1,0 +1,151 @@
+//1
+
+public static int min(int a, int b, int c, int d) {
+    int min = a; // Допустим, что a является наименьшим числом
+
+    // Проверяем остальные числа
+    if (b < min) {
+        min = b;
+    }
+    if (c < min) {
+        min = c;
+    }
+    if (d < min) {
+        min = d;
+    }
+
+    return min; // Возвращаем наименьшее число
+}
+
+
+//2
+
+public class Main {
+    public static boolean myXOR(boolean x, boolean y) {
+        return (x || y) && !(x && y);
+    }
+
+    public static void main(String[] args) {
+        boolean a = true;
+        boolean b = false;
+
+        boolean result = myXOR(a, b);
+        System.out.println(result); // Выводит true, так как только один из аргументов равен true
+    }
+	}
+	
+	
+	//3
+	
+	public class Main {
+    public static void main(String[] args) {
+        boolean result = election(true, false, true, false, true, 7);
+        System.out.println("The majority value is: " + result);
+    }
+
+    public static boolean election(boolean x, boolean y, int number) {
+        int countTrue = 0;
+        int countFalse = 0;
+
+        if (x)
+            countTrue++;
+        else
+            countFalse++;
+
+        if (y)
+            countTrue++;
+        else
+            countFalse++;
+
+        if (number == 7)
+            countTrue++;
+        else
+            countFalse++;
+
+        return countTrue > countFalse;
+    }
+}
+
+
+//4
+
+public static int digitCount(String str) {
+    int count = 0;
+    for (int i = 0; i < str.length(); i++) {
+        if (Character.isDigit(str.charAt(i))) {
+            count++;
+        }
+    }
+    return count;
+}
+
+//5
+
+import java.util.Arrays;
+
+public class ArraySorter {
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 9, 1, 7};
+        sortDescending(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void sortDescending(int[] arr) {
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+    }
+}
+
+
+//6
+
+public class Main {
+    public static void main(String[] args) {
+        int base = 2;
+        int exponent = 3;
+        int result = power(base, exponent);
+        System.out.println(base + " в степени " + exponent + " равно " + result);
+    }
+
+    public static int power(int base, int exponent) {
+        int result = 1;
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
+        }
+        return result;
+    }
+}
+
+
+//7
+
+public class Main {
+    public static void printChains(int N, int K) {
+        printChainsHelper(N, K, 1, "");
+    }
+
+    private static void printChainsHelper(int N, int K, int current, String chain) {
+        if (current > N) {
+            // Достигнуто максимальное количество элементов в цепочке
+            System.out.println(chain);
+            return;
+        }
+
+        for (int i = 1; i <= K; i++) {
+            int next = current * i;
+            if (next * 15 <= 5 * K) {
+                printChainsHelper(N, K, next, chain + next + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int N = 3;
+        int K = 10;
+        printChains(N, K);
+    }
+}

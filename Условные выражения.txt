@@ -1,0 +1,150 @@
+//1
+
+/*import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int result = scanner.nextInt();
+        System.out.println("Минимальное число: " + result);
+    }
+
+    public static int min(int a, int b, int c, int d) {
+        int min = a;
+
+        if (b < min) {
+            min = b;
+        }
+
+        if (c < min) {
+            min = c;
+        }
+
+        if (d < min) {
+            min = d;
+        }
+
+        return min;
+    }
+}*/
+
+//2
+
+import java.util.Scanner;
+public class Main {
+    public static boolean xor(boolean x, boolean y) {
+        
+        return (x || y) && !(x && y);
+    }
+
+    public static void main(String[] args) {
+    Scanner a = new Scanner(System.in);  
+    boolean a = sc.nextBoolean();  
+        
+        
+        boolean a;
+        boolean b;
+
+        boolean result = xor(a, b);
+        System.out.println(result); // выводит "true"
+    }
+}
+
+//3
+
+import java.util.Scanner;
+
+public class DivisionCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите первое действительное число: ");
+        double numerator = scanner.nextDouble();
+
+        System.out.print("Введите второе действительное число: ");
+        double denominator = scanner.nextDouble();
+
+        if (denominator != 0) {
+            double quotient = numerator / denominator;
+            System.out.println("Результат деления: " + quotient);
+        } else {
+            System.out.println("Ошибка. Деление на ноль невозможно.");
+        }
+
+        scanner.close();
+    }
+}
+
+//5
+
+//5
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+    public static void main(String[] args) {
+        LocalTime wakeUpTime = LocalTime.of(7, 30, 0); // Время, когда Петя должен проснуться
+        LocalTime currentTime = LocalTime.of(7, 30, 0); // Текущее время (пример: 7:30:00)
+
+        // Форматирование времени для вывода
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        if (currentTime.equals(wakeUpTime) || currentTime.isBefore(wakeUpTime)) {
+            System.out.println("Петя успевает на уроки");
+        } else {
+            System.out.println("Петя опоздал на уроки");
+        }
+    }
+
+
+//6
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Введите первое число:");
+        int a = input.nextInt();
+        
+        System.out.println("Введите второе число:");
+        int b = input.nextInt();
+        
+        System.out.println("Введите третье число:");
+        int c = input.nextInt();
+        
+        int max = a;
+        if (b > max) {
+            max = b;
+        }
+        if (c > max) {
+            max = c;
+        }
+        
+        System.out.println("Наибольшее число: " + max);
+    }
+}
+
+//7
+
+import java.util.Scanner;
+
+public class LeapYearChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите год: ");
+        int year = scanner.nextInt();
+
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+            System.out.println("Год " + year + " является високосным.");
+        } else {
+            System.out.println("Год " + year + " не является високосным.");
+        }
+    }
+}
+
+//8
+
+//9

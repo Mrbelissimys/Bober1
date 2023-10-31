@@ -1,0 +1,194 @@
+//1
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("¬ведите натуральное число: ");
+        int number = scanner.nextInt();
+        
+        System.out.println("ѕолные квадраты натуральных чисел, не превосход€щие " + number + ":");
+        for (int i = 1; i * i <= number; i++) {
+            System.out.println(i * i);
+        }
+    }
+
+
+//2
+
+import java.util.Scanner;
+
+public class SumOfNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите число a: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Введите число b: ");
+        int b = scanner.nextInt();
+
+        int sum = 0;
+        for (int i = a; i <= b; i++) {
+            sum += i;
+        }
+
+        System.out.println("Сумма всех чисел от " + a + " до " + b + " равна " + sum);
+    }
+}
+
+//3
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Введите число a: ");
+        int a = scanner.nextInt();
+        
+        System.out.print("Введите число b: ");
+        int b = scanner.nextInt();
+        
+        int count = 0;
+
+        for (int i = a; i <= b; i++) {
+            if (i % 3 == 0 && i % 5 != 0) {
+                count++;
+            }
+        }
+
+        System.out.println("Количество чисел, кратных 3, но не кратных 5: " + count);
+    }
+}
+
+//4
+
+import java.util.Scanner;
+
+public class AverageCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double sum = 0;
+        int count = 0;
+        double number;
+
+        System.out.println("Введите числа (введите 0 для завершения ввода):");
+
+        do {
+            number = scanner.nextDouble();
+            sum += number;
+            count++;
+        } while (number != 0);
+
+        double average = sum / (count - 1);
+        System.out.println("Среднее арифметическое: " + average);
+    }
+	
+
+//5
+
+import java.util.Scanner;
+
+public class MaxElementInSequence {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int max = Integer.MIN_VALUE;
+        int num;
+
+        do {
+            System.out.print("Введите число (0 для завершения): ");
+            num = scanner.nextInt();
+
+            if (num != 0 && num > max) {
+                max = num;
+            }
+        } while (num != 0);
+
+        System.out.println("Максимальное значение: " + max);
+    }
+}
+
+//6
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите число a: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Введите число b (b >= a): ");
+        int b = scanner.nextInt();
+
+        // Ваш код для обработки чисел a и b
+
+        scanner.close();
+    }
+
+
+//8
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 10; // значение n
+        int sum = 0; // переменная для хранения суммы
+        
+        for (int i = 1; i <= n; i++) {
+            int square = i * i; // вычисление квадрата числа i
+            sum += square; // добавление квадрата к сумме
+        }
+        
+        System.out.println("Сумма квадратов от 1 до " + n + " равна: " + sum);
+    }
+}
+
+
+//9
+
+public class RunningDistance {
+    public static void main(String[] args) {
+        double initialDistance = 1; // начальная дистанция в километрах
+        double targetDistance = 10; // целевая дистанция в километрах
+        double distance = initialDistance;
+        int day = 1;
+
+        while (distance < targetDistance) {
+            distance *= 1.1; // увеличиваем дистанцию на 10%
+            day++;
+        }
+
+        System.out.println("На " + day + " день пробег спортсмена составит не менее " + targetDistance + " километров.");
+    }
+
+
+//10
+
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите натуральное число N: ");
+        int n = scanner.nextInt();
+
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;  // Получаем остаток от деления на 10 (текущую цифру)
+            n /= 10;  // Уменьшаем число на один разряд путем деления на 10
+        }
+
+        System.out.println("Сумма цифр числа N: " + sum);
+    }
+	
+	
+	//11
+	
+	
