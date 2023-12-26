@@ -1,0 +1,20 @@
+
+function isPermutation(s) {
+    // Удалить вопросительные знаки
+    s = s.replace('?', '');
+
+    // Проверить, является ли остающаяся строка перестановкой "0123456789"
+    const sArray = s.split('').sort().join('');
+    const permutation = '0123456789'.split('').sort().join('');
+    return sArray === permutation;
+}
+
+// Получить входную строку
+const s = input();
+
+// Проверить, может ли эта строка быть отправлена Димой
+if (isPermutation(s)) {
+    console.log('YES'); // Строка может быть отправлена Димой
+} else {
+    console.log('NO'); // Строка не может быть отправлена Димой
+}
